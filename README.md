@@ -2,7 +2,8 @@
 ## Setup Instructions:
 1. Install [mujoco-py 1.50](https://github.com/openai/mujoco-py)`8702dd`, [gym](https://github.com/openai/gym)`220ae8` and [baselines](https://github.com/openai/baselines)`ba2b01`
 2. `pip uninstall gym`
-3. `cd gym_baxter && pip install -e .`
+3. `git clone https://github.com/huangjiancong1/gym_baxter.git`
+4. `cd gym_baxter && pip install -e .`
 
 ## Examples:
 #### BaxterPush:
