@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco>
+	<compiler angle="radian" coordinate="local" meshdir="meshes/" texturedir="../textures"></compiler>
+	<option timestep="0.002">
+		<flag warmstart="enable"></flag>
+	</option>
+
+	<include file="shared.xml"></include>
+	
+	<worldbody>
+		<geom name="floor0" pos="0.8 0 -0.96" size="2.85 2.7 1" type="plane" condim="3" material="floor_mat" ></geom>
+		<body name="floor0" pos="0.8 0 -0.96">
+
+
+			<site name="target0" pos="0 0 0.82" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+
+		<!--<body name="target0" pos="0.8 0 -0.14">
+			<joint name="target0:joint" type="free" damping="0.01" limited="false"></joint>
+			<geom size="0.025 0.025 0.025" type="sphere" condim="3" name="target0" material="yellow_mat" mass="2"></geom>
+			<site name="target0" pos="0 0 0" size="0.02 0.02 0.02" rgba="1 0 0 0" type="sphere"></site>
+		</body>-->
+
+		<include file="baxter_test.xml"></include>
+
+		<body pos="1.1 0 -0.56" name="table0">
+			<geom size="0.65 0.75 0.4" type="box" mass="2000" material="table_mat"></geom>
+		</body>
+		
+		<body name="object0" pos="1.1 0 0.82">
+			<joint name="object0:joint" type="free" damping="0.01" limited="false"></joint>
+			<geom size="0.02 0.02 0.02" type="box" condim="3" name="object0" material="block_mat" mass="2"></geom>
+			<site name="object0" pos="0 0 0" size="0.02 0.02 0.02" rgba="1 0 0 1" type="sphere"></site>
+		</body>
+
+		<light directional="true" ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" castshadow="false" pos="0 0 4" dir="0 0 -1" name="light0"></light>
+	</worldbody>
+	
+	<actuator>
+		<position ctrllimited="true" ctrlrange="0 0.2" joint="l_gripper_l_finger_joint" kp="20000" name="l_gripper_l_finger_joint" user="1"></position>
+		<position ctrllimited="true" ctrlrange="0 0.2" joint="l_gripper_r_finger_joint" kp="20000" name="l_gripper_r_finger_joint" user="1"></position>
+        </actuator>
+</mujoco>
+
+
