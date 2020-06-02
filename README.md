@@ -10,7 +10,7 @@
 ```
 python -m baselines.run --alg=her --env=BaxterPush-v1 --num_timesteps=0 --load_path=/$PATH/policy --play
 ```
-#### BaxterPickupAnd:
+#### BaxterPickAndPlace:
 ```
 python -m baselines.run --alg=her --env=BaxterPickAndPlace-v1 --num_timesteps=0 --load_path=/$PATH/policy --play
 ```
